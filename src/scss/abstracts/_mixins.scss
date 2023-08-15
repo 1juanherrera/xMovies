@@ -1,0 +1,26 @@
+@use './variables' as *;
+
+@mixin flex($align-item, $justify-content) {
+    display: flex;
+    align-items: $align-item;
+    justify-content: $justify-content;
+}
+
+@mixin overlay {
+    background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+/* mixin responsive */
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == mobile {
+      @media (max-width: $mobile-width) {
+        @content;
+      } // 600px
+    }
+    @if $breakpoint == tablet {
+      @media (max-width: $tablet-width) {
+        @content;
+      } // 1024px
+    }
+}
