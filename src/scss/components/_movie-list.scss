@@ -1,0 +1,7 @@
+@use '../abstracts' as *;
+
+.movie-list {
+    .swiper-slide {
+        width: 15%;
+    }
+}
