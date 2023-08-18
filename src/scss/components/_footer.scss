@@ -1,1 +1,49 @@
 @use '../abstracts' as *;
+
+.footer {
+    position: relative;
+    padding: 6rem 2rem;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__content {
+        width: 100%;
+        
+        &__logo {
+            @include flex(center, center);
+            margin-bottom: 3rem;
+
+            &--logo {
+                @include flex(center, center);
+                font-size: 2rem;
+                font-weight: 600;
+
+                img {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        &__menus {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            &--menu {
+                @include flex(center, center);
+                flex-direction: column;
+                margin-top: 1rem;
+
+                font-size: 1.5rem;
+                font-weight: 600;
+
+                & > * ~ * {
+                    margin-top: 1rem;
+                }
+            }
+        }
+
+    }
+
+   
+}
