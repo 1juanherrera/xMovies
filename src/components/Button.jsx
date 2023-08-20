@@ -15,3 +15,11 @@ export const ButtonOutline = ({ text, id, onClick, className }) => {
         </button>
     )
 }
+
+export const ButtonViewMore = ({ text, id, onClick, className }) => {
+    return (
+        <button className={`btn__outline ${className}`} id={ id }>
+            { text }
+        </button>
+    )
+}

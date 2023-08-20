@@ -1,0 +1,178 @@
+@use '../abstracts' as *;
+
+.banner {
+    height: 50vh;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+        
+    @include responsive(tablet) {
+        height: 40rem;
+        margin-bottom: 4rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include overlay();
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+    }
+}
+
+.movie-content {
+    @include flex(flex-start, flex-start);
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -16rem;
+    position: relative;
+    padding: 0 2rem;
+
+    @include responsive(mobile) {
+        width: 100%;
+        margin-top: -25rem;
+    }
+
+    &__poster {
+        flex: 1;
+
+        @include responsive(mobile) {
+            display: none;
+        }
+
+        &__img {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: $border-radius;
+            padding-top: 160%;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__info {
+        width: 70%;
+        padding-left: 2rem;
+        position: relative;
+
+        @include responsive(mobile) {
+            width: 100%;
+            padding-left: 0;
+        }
+
+        & > * {
+            margin-bottom: 1rem;
+        }
+
+        &__title {
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        &__genres {
+            @include flex(start, start);
+
+            & > * ~ * {
+                margin-left: .5rem;
+            }
+
+            &--item {
+                padding: .5rem 1.5rem;
+                border: 2px solid $white;
+                border-radius: $border-radius;
+                font-size: .8rem;
+                font-weight: 600;
+                background-color: $body-bg;
+
+                @include responsive(tablet){
+                    margin: 1rem 1rem 0 0;
+                    font-size: 1rem;
+                }
+            }
+
+            @include responsive(tablet){
+                flex-wrap: wrap;
+            }
+        }
+
+        &__overview {
+            font-size: 1rem;
+
+            @include responsive(mobile) {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__cast {
+            
+            &--header {
+                
+                margin-bottom: 0.5rem;
+
+                @include responsive(mobile){
+                    font-size: 1.5rem;
+                }
+            }
+
+            &--similar {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.cast {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    
+
+    @include responsive(mobile) {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    }
+
+    &__item {
+
+        &__img {
+            padding-top: 160px;
+            background-size: cover;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+        }
+
+        &__name {
+            font-size: 0.8rem;
+
+            @include responsive(mobile){
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.video {
+    margin-bottom: 3rem;
+
+    &__title {
+        margin-bottom: 1.5rem;
+
+        @include responsive(mobile){
+            font-size: 1rem;
+        }
+    }
+}

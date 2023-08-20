@@ -1,7 +1,18 @@
 @use '../abstracts' as *;
 
 .movie-list {
+
     .swiper-slide {
+        padding-top: 20px;
         width: 15%;
+        border-radius: $border-radius;
+        margin-left: 10px;
+
+        @include responsive(tablet) {
+            width: 30%;
+        }
+        @include responsive(mobile) {
+            width: 40%;
+        }
     }
 }

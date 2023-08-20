@@ -5,12 +5,16 @@
 
     &__item {
         padding: 5rem 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
         position: relative;
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        
+        @include responsive(tablet) {
+            height: 40rem;
+            margin-bottom: 4rem;
+        }
 
         &::before {
             content: '';
@@ -22,16 +26,28 @@
             @include overlay();
         }
 
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+        }
+
         &__content {
             @include flex(center, center);
             position: relative;
+            z-index: 10;
 
             &__info {
                 width: 50%;
                 text-align: start;
 
                 @include responsive(tablet) {
-                    width: 100%;
+                    margin-top: 6rem;
+                    width: 80%;
                 }
 
                 & > * ~ * {
@@ -45,13 +61,17 @@
                     line-height: 1;
 
                     @include responsive(tablet) {
-                        font-size: 2rem;
+                        font-size: 3rem;
                     }
                 }
 
                 &--overview {
                     width: 90%;
                     font-weight: 500;
+
+                    @include responsive(tablet) {
+                        font-size: 1.3rem;
+                    }
                 }
             }
 

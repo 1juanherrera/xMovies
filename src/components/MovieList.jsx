@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom"
 import { SwiperSlide, Swiper } from "swiper/react"
-import 'swiper/swiper-bundle.css'
-import { Button } from "./Button"
-import { tmdbApi, apiConfig } from "../api"
+import { tmdbApi } from "../api"
 import { useState, useEffect } from "react"
 import { MovieCard } from "./MovieCard"
 
@@ -22,8 +19,7 @@ export const MovieList = ( props ) => {
                         response = await tmdbApi.getTvList(props.type, {params});
                         break;
                     default:
-                        response = await tmdbApi.getMoviesList(props.type, {params});
-                        
+                        response = await tmdbApi.getMoviesList(props.type, {params});   
                 }
             } else {
                 response = await tmdbApi.similar(props.category, props.id);
