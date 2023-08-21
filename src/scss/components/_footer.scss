@@ -5,7 +5,7 @@
     padding: 6rem 2rem;
     background-position: top;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;  
 
     &__content {
         width: 100%;
@@ -21,24 +21,23 @@
 
                 img {
                     margin-right: 1rem;
+                    width: 5rem;
                 }
+
             }
         }
 
         &__menus {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
 
             &--menu {
-                @include flex(center, center);
-                flex-direction: column;
-                margin-top: 1rem;
+                @include flex(center, space-evenly);
+                margin-top: 5rem;
 
                 font-size: 1.5rem;
                 font-weight: 600;
 
-                & > * ~ * {
-                    margin-top: 1rem;
+                @include responsive(mobile) {
+                    flex-direction: column;
                 }
             }
         }

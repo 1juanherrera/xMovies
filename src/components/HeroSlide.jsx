@@ -35,7 +35,7 @@ export const HeroSlide = () => {
                 grabCursor={ true }
                 spaceBetween={ 1 }
                 slidesPerView={ 1 }
-                //autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 3000 }}
             >
                 {
                     movieItems.map((item, i) => (

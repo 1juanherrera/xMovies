@@ -15,9 +15,9 @@ export const Footer = () => {
                 <div className="footer__content__menus">
                 <div className="footer__content__menus--menu">
                         <Link to="/">Home</Link>
-                        <Link to="/">Contact us</Link>
-                        <Link to="/">Term of services</Link>
-                        <Link to="/">About us</Link>
+                        <Link to="/">Contact me</Link>
+                        <Link to="/">Github</Link>
+                        <Link to="/">LinkedIn</Link>
                     </div>
                 </div>
             </div>
