@@ -14,10 +14,10 @@ export const Footer = () => {
                 </div>
                 <div className="footer__content__menus">
                 <div className="footer__content__menus--menu">
-                        <Link to="/">Home</Link>
-                        <Link to="/">Contact me</Link>
-                        <Link to="/">Github</Link>
-                        <Link to="/">LinkedIn</Link>
+                        <Link to='/'>Home</Link>
+                        <a target='_blank' href='https://my-portfolio-omega-beryl.vercel.app/'>Portfolio</a>
+                        <a target='_blank' href='https://github.com/1juanherrera' >Github</a>
+                        <a target='_blank' href='https://www.linkedin.com/in/juanherreramu%C3%B1oz/'>LinkedIn</a>
                     </div>
                 </div>
             </div>
